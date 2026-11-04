@@ -16,9 +16,10 @@
 <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Libre+Franklin:wght@600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Homemade+Apple&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/site.css">
 <link rel="stylesheet" href="/static/css/extra.css">
+<link rel="stylesheet" href="/static/css/letter.css">
 {% if page.book_schema %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":{{ site.book_title | jsonify }},"alternativeHeadline":{{ site.book_subtitle | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"image":"{{ site.url }}/static/img/cover.jpg","url":"{{ site.url }}/buy/","inLanguage":"en","workExample":[{"@type":"Book","bookFormat":"https://schema.org/Paperback"},{"@type":"Book","bookFormat":"https://schema.org/EBook"}],"offers":{"@type":"Offer","url":{{ site.buy_url | jsonify }},"availability":"https://schema.org/InStock"}}</script>{% endif %}
 {% if page.layout == 'post' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.date | date_to_xmlschema }}","keywords":{{ page.keywords | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg","publisher":{"@type":"Organization","name":{{ site.title | jsonify }}}}</script>{% endif %}
 {% if page.layout == 'method' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg"}</script>{% endif %}
@@ -26,7 +27,7 @@
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="logo" href="/">The Performance Anxiety <span>Cure</span></a>
+    <a class="logo" href="/">Performance<span>Anxiety</span>Cure</a>
     <nav class="nav">
       <a href="/method/">The Method</a>
       <a href="/blog/">Blog</a>
@@ -44,7 +45,7 @@
     <img src="/static/img/cover.jpg" alt="{{ site.book_title }} by {{ site.author }}" width="200" height="320" loading="lazy">
     <div>
       <p class="eyebrow">The complete plan</p>
-      <h2>Everything on this site comes from {{ site.book_title }}</h2>
+      <h2>Get the full plan in {{ site.book_title }}</h2>
       <p>The articles cover the principles. The book walks you through every step, including what to say, what to do in the moment, and how to handle the night it goes wrong.</p>
       <a class="btn btn-red btn-lg" href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Get the book on Amazon<small>Paperback ${{ site.price_paperback }} · Kindle ${{ site.price_ebook_amazon }}</small></a>
     </div>

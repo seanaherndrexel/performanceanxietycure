@@ -1,0 +1,46 @@
+/* sales letter in the original navy and red look */
+.letter-hero .hero-inner{padding:64px 20px 72px}
+.letter-hero .pre-head{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ff6b72;margin:0 0 14px}
+.letter-hero .headline{font-size:clamp(44px,6.4vw,78px);margin:0 0 18px}
+.letter-hero .subhead{font-size:21px;color:#d7defa;max-width:640px;margin:0}
+.letter-hero .cta-note{font-size:15px;color:#aab6dc;margin:14px 0 0}
+.letter-hero .cta-note a{color:#fff;font-weight:600}
+.btn small{display:block;font-weight:600;font-size:14px;margin-top:3px;opacity:.9}
+.letter{max-width:780px;margin:0 auto;padding:60px 20px 40px}
+.letter p,.letter li{color:#262b38}
+.letter h2{margin:1.5em 0 .5em;color:var(--navy)}
+.letter h2::after{content:"";display:block;width:64px;height:4px;background:var(--red);margin-top:12px}
+.letter mark{background:linear-gradient(transparent 55%,rgba(232,32,42,.25) 55%);color:inherit;padding:0 2px}
+.salutation{font-weight:800}
+.fascinations{list-style:none;padding:0;margin:22px 0}
+.fascinations li{position:relative;padding:12px 0 12px 38px;border-bottom:1px solid var(--line)}
+.fascinations li::before{content:"";position:absolute;left:2px;top:19px;width:18px;height:18px;border-radius:50%;background:var(--red)}
+.fascinations em{font-style:normal;color:var(--blue);font-weight:600;font-size:15px;white-space:nowrap}
+.pullquote{font-family:"Bebas Neue",Impact,sans-serif;font-size:clamp(30px,4vw,44px);line-height:1.08;color:var(--navy);border-left:6px solid var(--red);padding:6px 0 6px 22px;margin:32px 0}
+.callout{background:var(--soft);border-left:6px solid var(--blue);border-radius:var(--radius);padding:22px 26px;margin:28px 0}
+.callout p{margin:0}
+.order-box{background:linear-gradient(150deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);border-left:6px solid var(--red);padding:30px;margin:34px 0}
+.order-box h3{color:#fff;text-align:center;font-size:36px;margin-bottom:18px}
+.order-grid{display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:start}
+.order-grid img{border-radius:4px;box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.order-list{list-style:none;padding:0;margin:0 0 18px}
+.letter .order-list li{color:#d7defa;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;font-size:17px}
+.order-list li span:last-child{font-weight:800;color:#fff;white-space:nowrap}
+.order-list s{color:#8f9bbf;font-weight:600;margin-right:6px}
+.order-actions{display:flex;flex-direction:column;gap:12px}
+.order-actions .btn{width:100%;text-align:center}
+.letter .order-fine{font-size:14px;color:#aab6dc;text-align:center;margin:16px 0 0}
+.letter .btn-ghost{border-color:rgba(255,255,255,.5)}
+.signoff{margin-top:36px}
+.signature{font-family:"Homemade Apple","Brush Script MT",cursive;font-size:28px;color:var(--navy);margin:8px 0 0;line-height:1.5}
+.ps{margin-top:24px}
+.more-reading{background:var(--soft);border-radius:var(--radius);padding:26px;margin-top:40px}
+.letter-note{color:var(--muted);text-align:center;margin:0 auto 40px}
+.letter .store .offer h3{color:var(--ink)}
+.letter .store-note{text-align:center}
+@media (max-width:700px){
+  .order-grid{grid-template-columns:1fr;text-align:center}
+  .order-grid img{max-width:170px;margin:0 auto}
+  .order-box{padding:22px 16px}
+  .fascinations em{white-space:normal}
+}
