@@ -44,3 +44,44 @@
   .order-box{padding:22px 16px}
   .fascinations em{white-space:normal}
 }
+
+/* phones: tighter type, less text, simpler header */
+@media (max-width:600px){
+  body{font-size:16px;line-height:1.6}
+  .header-inner{flex-wrap:nowrap;justify-content:space-between;min-height:56px;padding:8px 16px}
+  .logo{font-size:21px}
+  .nav{gap:10px}
+  .nav a:not(.btn){display:none}
+  .nav .btn-sm{padding:8px 14px;font-size:14px}
+  h1,.page-hero h1{font-size:34px}
+  h2{font-size:28px}
+  h3{font-size:22px}
+  .page-hero{padding:34px 0 30px}
+  .page-hero .lede{font-size:16px}
+  .letter-hero .hero-inner{padding:28px 16px 36px;gap:22px}
+  .letter-hero .pre-head{font-size:11px;letter-spacing:.1em;margin-bottom:10px}
+  .letter-hero .headline{font-size:36px;line-height:1.02}
+  .letter-hero .subhead{font-size:16px}
+  .letter-hero .cta-note{display:none}
+  .letter-hero .hero-actions{margin-top:20px}
+  .letter-hero .hero-actions .btn{width:100%;text-align:center}
+  .letter-hero .hero-cover{max-width:160px;transform:rotate(2deg)}
+  .btn-lg{padding:14px 22px;font-size:17px}
+  .letter{padding:32px 16px 24px}
+  .letter h2{font-size:28px;margin:1.3em 0 .4em}
+  .fascinations li{padding:9px 0 9px 28px}
+  .fascinations li::before{width:12px;height:12px;top:16px}
+  .fascinations em{display:none}
+  .pullquote{font-size:26px;padding-left:16px;margin:24px 0}
+  .callout{padding:16px 18px}
+  .order-box{padding:20px 14px}
+  .order-box h3{font-size:28px}
+  .order-grid img{max-width:120px}
+  .letter .order-list li{font-size:15px}
+  .signature{font-size:22px}
+  .more-reading{padding:18px}
+  .signup{padding:36px 0}
+  .final-cta{padding:36px 0}
+  .final-cta img{max-width:120px}
+  .with-side{padding-top:28px;gap:28px}
+}
