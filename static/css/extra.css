@@ -1,32 +1,30 @@
 .side .buybox{flex-direction:column;text-align:center;margin:0;padding:22px}
-.side .buybox .buybox-cover img{width:150px;margin:0 auto}
-.buybox .direct{display:block;margin-top:10px;font-size:14px;color:#ffd1d3;font-weight:600}
-.buybox .direct:hover{color:#fff}
+.side .buybox .buybox-cover img{width:140px;margin:0 auto}
+.buybox .direct{display:block;margin-top:10px;font-size:15px;color:var(--red);font-weight:600;font-family:"Libre Franklin",Arial,sans-serif}
 
 /* mailing list */
-.signup{background:var(--soft);padding:56px 0;border-top:1px solid var(--line)}
+.signup{background:#efe9dc;padding:50px 0;border-top:1px solid var(--line)}
 .signup-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
 .signup h2{margin-bottom:.25em}
-.signup p{color:var(--muted)}
+.signup p{color:#555}
 .signup-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.signup-form input[type=text],.signup-form input[type=email]{font:inherit;font-size:17px;padding:14px 16px;border:1px solid #c9cfdc;border-radius:10px;background:#fff;width:100%}
-.signup-form input:focus{outline:2px solid var(--blue);border-color:var(--blue)}
-.signup-form button{grid-column:1/-1;border:0;cursor:pointer;font-size:17px}
+.signup-form input[type=text],.signup-form input[type=email]{font:inherit;font-size:17px;padding:13px 15px;border:1px solid #bdb39b;border-radius:4px;background:#fff;width:100%}
+.signup-form input:focus{outline:2px solid var(--red);border-color:var(--red)}
+.signup-form button{grid-column:1/-1;cursor:pointer;font-size:17px}
 .signup-form .small{grid-column:1/-1;margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
 /* direct store */
-.store{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:30px}
-.offer{background:#fff;border:1px solid var(--line);border-top:5px solid var(--red);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
-.offer:nth-child(2){border-top-color:var(--blue)}
-.offer h3{margin:0 0 6px}
-.offer .price{font-family:"Bebas Neue",Impact,sans-serif;font-size:54px;line-height:1;color:var(--ink);margin:6px 0}
-.offer .price s{font-size:26px;color:var(--muted);margin-left:8px}
-.offer .save{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
-.offer ul{padding-left:18px;color:#262b38;margin:8px 0 20px}
-.offer .btn{margin-top:auto;text-align:center}
-.store-note{font-size:14px;color:var(--muted);margin-top:16px}
+.store{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:24px}
+.offer{background:#fff;border:2px dashed var(--red);padding:24px;display:flex;flex-direction:column}
+.offer h3{margin:0 0 4px}
+.offer .price{font-family:"Libre Franklin",Arial,sans-serif;font-weight:800;font-size:40px;line-height:1;color:var(--ink);margin:8px 0}
+.offer .price s{font-size:22px;color:var(--muted);margin-left:8px;font-weight:600}
+.offer .save{display:inline-block;align-self:flex-start;background:var(--mark);color:var(--ink);font-family:"Libre Franklin",Arial,sans-serif;font-weight:800;font-size:14px;padding:2px 8px;margin-bottom:10px}
+.offer ul{padding-left:20px;margin:8px 0 20px}
+.offer .btn{margin-top:auto}
+.store-note{font-size:15px;color:var(--muted);margin-top:16px}
 .dl-list{list-style:none;padding:0;margin:24px 0}
 .dl-list li{margin:0 0 12px}
 

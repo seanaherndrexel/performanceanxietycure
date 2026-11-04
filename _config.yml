@@ -12,6 +12,7 @@ stripe_ebook: https://buy.stripe.com/9B600j21PeUi0lQ8Pm4AU08
 stripe_audio: https://buy.stripe.com/00w3cvayl6nMfgK4z64AU09
 price_ebook: "3.99"
 price_ebook_amazon: "4.99"
+price_paperback: "9.99"
 price_audio: "7.99"
 price_audio_amazon: "9.99"
 
