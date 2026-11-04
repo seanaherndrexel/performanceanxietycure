@@ -4,4 +4,6 @@ sitemap: false
 ---
 User-agent: *
 Allow: /
+Disallow: /get/
+Disallow: /thanks/
 Sitemap: {{ site.url }}/sitemap.xml

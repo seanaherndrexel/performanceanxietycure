@@ -6,6 +6,7 @@
 <title>{% if page.title contains site.title %}{{ page.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.description | escape }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'method' %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{{ page.title | escape }}">
 <meta property="og:description" content="{{ page.description | escape }}">
@@ -37,6 +38,7 @@
 <main>
 {{ content }}
 </main>
+{% unless page.no_signup %}{% include signup.html id="foot" %}{% endunless %}
 <section class="final-cta">
   <div class="wrap final-cta-inner">
     <img src="/static/img/cover.jpg" alt="{{ site.book_title }} by {{ site.author }}" width="200" height="320" loading="lazy">
@@ -50,7 +52,7 @@
 </section>
 <footer class="site-footer">
   <div class="wrap">
-    <p><a href="/method/">The Method</a> · <a href="/blog/">Blog</a> · <a href="/about/">About the Book</a> · <a href="/buy/">Buy the Book</a> · <a href="/disclaimer/">Medical Disclaimer</a></p>
+    <p><a href="/method/">The Method</a> · <a href="/blog/">Blog</a> · <a href="/about/">About the Book</a> · <a href="/buy/">Buy the Book</a> · <a href="/disclaimer/">Medical Disclaimer</a> · <a href="/privacy/">Privacy</a></p>
     <p class="small">The information on this site is educational and is not medical advice. Talk to your doctor about any health concern or before taking any medication. © {{ site.time | date: "%Y" }} {{ site.author }}.</p>
   </div>
 </footer>

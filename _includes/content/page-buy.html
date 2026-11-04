@@ -10,10 +10,36 @@ description: Get The Performance Anxiety Cure by Sean Stephens on Amazon in pape
       <p class="lede">A Proven Action Plan for Men to Finally Enjoy Sex Without Performance Anxiety. Fifteen chapters written in plain language by someone who has been there.</p>
       <div class="hero-actions">
         <a class="btn btn-red btn-lg" href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank">Buy it on Amazon</a>
+        <a class="btn btn-ghost btn-lg" href="#direct">Buy direct, save 20%</a>
       </div>
       <p class="small" style="color:#aab6dc;margin-top:14px">Get the paperback delivered, or read the Kindle edition on any phone, tablet or computer with the free Kindle app.</p>
     </div>
     <a href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank"><img class="hero-cover" src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="340" height="544"></a>
+  </div>
+</section>
+
+<section class="band soft" id="direct">
+  <div class="wrap">
+    <p class="eyebrow">Buy direct from the author</p>
+    <h2>Save 20% on the eBook and audiobook</h2>
+    <p style="max-width:720px">Buy here and the files are yours to keep, with no app required. You can download them as soon as checkout finishes. The paperback, Kindle and Audible editions are on Amazon too.</p>
+    <div class="store">
+      <div class="offer">
+        <span class="save">Save 20%</span>
+        <h3>The eBook</h3>
+        <p class="price">${{ site.price_ebook }}<s>${{ site.price_ebook_amazon }}</s></p>
+        <ul><li>EPUB for Apple Books, Kobo, Google Play Books and most reading apps</li><li>PDF for any phone, tablet or computer</li><li>All fifteen chapters, instant download</li></ul>
+        <a class="btn btn-red" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Buy the eBook</a>
+      </div>
+      <div class="offer">
+        <span class="save">Save 20%</span>
+        <h3>The Audiobook</h3>
+        <p class="price">${{ site.price_audio }}<s>${{ site.price_audio_amazon }}</s></p>
+        <ul><li>The complete book in MP3 files, one per chapter</li><li>Plays on any phone, car stereo or computer</li><li>Narrated by a natural-sounding digital voice</li></ul>
+        <a class="btn btn-red" href="{{ site.stripe_audio }}" rel="nofollow noopener">Buy the audiobook</a>
+      </div>
+    </div>
+    <p class="store-note">Secure checkout by Stripe. Your card statement will show the purchase as "PA CURE."</p>
   </div>
 </section>
 

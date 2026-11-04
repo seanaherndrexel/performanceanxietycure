@@ -7,6 +7,14 @@ book_subtitle: A Proven Action Plan for Men to Finally Enjoy Sex Without Perform
 # Swap for the book's direct Amazon link (https://www.amazon.com/dp/ASIN) once the listing is live.
 buy_url: https://www.amazon.com/s?k=The+Performance+Anxiety+Cure+Sean+Stephens
 
+# Direct sales (Stripe Payment Links). Amazon list prices: Kindle $4.99, Audible $9.99. Direct = 20% off.
+stripe_ebook: https://buy.stripe.com/9B600j21PeUi0lQ8Pm4AU08
+stripe_audio: https://buy.stripe.com/00w3cvayl6nMfgK4z64AU09
+price_ebook: "3.99"
+price_ebook_amazon: "4.99"
+price_audio: "7.99"
+price_audio_amazon: "9.99"
+
 permalink: /blog/:title/
 timezone: America/New_York
 future: false

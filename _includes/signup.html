@@ -1,0 +1,19 @@
+<section class="signup">
+  <div class="wrap signup-inner">
+    <div>
+      <p class="eyebrow">Free from the author</p>
+      <h2>Get the next article in your inbox</h2>
+      <p>New articles on beating performance anxiety, plus book news and occasional reader-only discounts. No spam, and you can unsubscribe any time.</p>
+    </div>
+    <form class="signup-form" action="https://hook.us2.make.com/vnyug8kn2kall0oh51vl2zpcb2vkingi" method="post">
+      <label class="sr" for="su-name-{{ include.id | default: 'a' }}">First name</label>
+      <input id="su-name-{{ include.id | default: 'a' }}" type="text" name="first_name" placeholder="First name" autocomplete="given-name">
+      <label class="sr" for="su-email-{{ include.id | default: 'a' }}">Email</label>
+      <input id="su-email-{{ include.id | default: 'a' }}" type="email" name="email" placeholder="Email address" required autocomplete="email">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <input type="hidden" name="page" value="{{ page.url }}">
+      <button class="btn btn-red" type="submit">Sign me up</button>
+      <p class="small">By signing up you agree to the <a href="/privacy/">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
