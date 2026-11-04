@@ -3,19 +3,18 @@
 Every article exists to rank on Google for one keyword and send readers to buy The Performance Anxiety Cure by Sean Stephens on Amazon.
 
 ## File format
-Create `posts/YYYY-MM-DD-<slug>.html` (today's date, America/New_York). Body is bare HTML: `<p>`, `<h2>`, `<h3>`, `<ul>/<li>`, `<blockquote>`, `<strong>`. No `<h1>`, no html/head/body tags, no inline styles, no images. Start with this front matter comment:
+Create `_posts/YYYY-MM-DD-<slug>.html` (today's date, America/New_York; the slug is the keyword in lowercase with hyphens, and it becomes the URL /blog/<slug>/). Body is bare HTML: `<p>`, `<h2>`, `<h3>`, `<ul>/<li>`, `<blockquote>`, `<strong>`, `<a>`. No `<h1>`, no html/head/body tags, no inline styles, no images, and never the characters `{{` or `{%`. Start the file with this YAML front matter (keep the double quotes; escape any double quote inside a value as \"):
 
 ```
-<!--
-title: <SEO title, 50-65 chars, keyword near the front>
-description: <meta description, 140-158 chars, includes keyword>
-date: YYYY-MM-DD
-slug: <keyword-as-slug>
-keywords: <main keyword>, <3-5 close variations>
--->
+---
+layout: "post"
+title: "<SEO title, 50-65 chars, keyword near the front>"
+description: "<meta description, 140-158 chars, includes keyword>"
+keywords: "<main keyword>, <3-5 close variations>"
+---
 ```
 
-The site builder adds the headline, buy boxes after paragraph three, the sidebar, related posts and the closing call to action automatically. Every page already pushes the book, so the article itself mentions the book naturally two or three times, never as a hard sell in every paragraph.
+GitHub Pages builds the site automatically about a minute after the commit. The layout adds the headline, buy boxes after paragraph three, the sidebar, related posts and the closing call to action automatically. Every page already pushes the book, so the article itself mentions the book naturally two or three times, never as a hard sell in every paragraph.
 
 ## Length and structure
 - 1,200 to 1,800 words.

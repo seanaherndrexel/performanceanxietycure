@@ -1,0 +1,2 @@
+{% assign parts = include.html | split: "</p>" %}{% if parts.size > 6 %}{% for part in parts %}{{ part }}{% unless forloop.last %}</p>{% endunless %}{% if forloop.index == 3 %}
+{% include buybox.html variant="inline" %}{% endif %}{% endfor %}{% else %}{{ include.html }}{% endif %}

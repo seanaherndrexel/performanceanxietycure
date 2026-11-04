@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% assign methods = site.method | sort: "order" %}{% assign total = methods | size %}{% for m in methods %}{% if m.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}{% assign num = idx | plus: 1 %}{% assign prev_i = idx | minus: 1 %}{% assign next_i = idx | plus: 1 %}
+<section class="page-hero"><div class="wrap narrow">
+  <p class="eyebrow">Principle {% if num < 10 %}0{% endif %}{{ num }} of {% if total < 10 %}0{% endif %}{{ total }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.description }}</p>
+</div></section>
+<div class="wrap with-side">
+  <article class="prose">{% include body-with-cta.html html=content %}
+  <nav class="pager">{% if idx > 0 %}<a href="{{ methods[prev_i].url }}">&larr; {{ methods[prev_i].nav }}</a>{% else %}<a href="/method/">&larr; All principles</a>{% endif %}{% if next_i < total %}<a href="{{ methods[next_i].url }}">{{ methods[next_i].nav }} &rarr;</a>{% else %}<a href="/buy/">Get the full book &rarr;</a>{% endif %}</nav>
+  </article>
+  <aside class="side">{% include buybox.html variant="side" %}<div class="side-nav"><p class="eyebrow">The method</p>{% include method-list.html %}</div></aside>
+</div>

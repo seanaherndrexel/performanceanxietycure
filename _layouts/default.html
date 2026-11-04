@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title contains site.title %}{{ page.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | escape }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'method' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page.description | escape }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/static/img/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/site.css">
+<link rel="stylesheet" href="/static/css/extra.css">
+{% if page.book_schema %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":{{ site.book_title | jsonify }},"alternativeHeadline":{{ site.book_subtitle | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"image":"{{ site.url }}/static/img/cover.jpg","url":"{{ site.url }}/buy/","inLanguage":"en","workExample":[{"@type":"Book","bookFormat":"https://schema.org/Paperback"},{"@type":"Book","bookFormat":"https://schema.org/EBook"}],"offers":{"@type":"Offer","url":{{ site.buy_url | jsonify }},"availability":"https://schema.org/InStock"}}</script>{% endif %}
+{% if page.layout == 'post' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.date | date_to_xmlschema }}","keywords":{{ page.keywords | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg","publisher":{"@type":"Organization","name":{{ site.title | jsonify }}}}</script>{% endif %}
+{% if page.layout == 'method' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg"}</script>{% endif %}
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/">Performance<span>Anxiety</span>Cure</a>
+    <nav class="nav">
+      <a href="/method/">The Method</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About the Book</a>
+      <a class="btn btn-red btn-sm" href="/buy/">Buy the Book</a>
+    </nav>
+  </div>
+</header>
+<main>
+{{ content }}
+</main>
+<section class="final-cta">
+  <div class="wrap final-cta-inner">
+    <img src="/static/img/cover.jpg" alt="{{ site.book_title }} by {{ site.author }}" width="200" height="320" loading="lazy">
+    <div>
+      <p class="eyebrow">Ready to stop feeding the fear?</p>
+      <h2>Get the complete plan in {{ site.book_title }}</h2>
+      <p>The pages on this site cover the principles. The book walks you through every step, including what to say, what to do in the moment, and how to handle the night it goes wrong.</p>
+      <a class="btn btn-red btn-lg" href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Buy it on Amazon</a>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="/method/">The Method</a> · <a href="/blog/">Blog</a> · <a href="/about/">About the Book</a> · <a href="/buy/">Buy the Book</a> · <a href="/disclaimer/">Medical Disclaimer</a></p>
+    <p class="small">The information on this site is educational and is not medical advice. Talk to your doctor about any health concern or before taking any medication. © {{ site.time | date: "%Y" }} {{ site.author }}.</p>
+  </div>
+</footer>
+<a class="sticky-buy" href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Get the book on Amazon</a>
+</body>
+</html>

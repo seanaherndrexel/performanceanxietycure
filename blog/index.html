@@ -1,0 +1,11 @@
+---
+layout: default
+title: "Performance Anxiety Blog"
+description: "Articles on sexual performance anxiety in men: causes, the fear loop, talking to a partner, and practical ways to get your confidence back."
+---
+<section class="page-hero"><div class="wrap narrow">
+  <p class="eyebrow">Blog</p>
+  <h1>Straight Talk on Performance Anxiety</h1>
+  <p class="lede">Plain-language articles on what's happening in your head and body, and what to do about it.</p>
+</div></section>
+<div class="wrap"><div class="cards">{% for post in site.posts %}{% include post-card.html post=post %}{% else %}<p>New articles are on the way.</p>{% endfor %}</div></div>

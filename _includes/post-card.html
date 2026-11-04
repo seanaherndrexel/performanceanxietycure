@@ -1,0 +1,6 @@
+<article class="card">
+  <p class="meta">{{ include.post.date | date: "%B %-d, %Y" }}</p>
+  <h3><a href="{{ include.post.url }}">{{ include.post.title }}</a></h3>
+  <p>{{ include.post.description }}</p>
+  <a class="more" href="{{ include.post.url }}">Read the article</a>
+</article>

@@ -1,0 +1,8 @@
+---
+layout: "default"
+title: "Buy The Performance Anxiety Cure on Amazon"
+description: "Get The Performance Anxiety Cure by Sean Stephens on Amazon in paperback or Kindle. A proven action plan for men to finally enjoy sex without performance anxiety."
+permalink: "/buy/"
+book_schema: True
+---
+{% assign BUY_URL = site.buy_url %}{% capture METHOD_LIST %}{% include method-list.html %}{% endcapture %}{% capture LATEST_POSTS %}{% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}{% endcapture %}{% capture BUY_BOX %}{% include buybox.html variant="wide" %}{% endcapture %}{% include content/page-buy.html %}

@@ -1,0 +1,1 @@
+{% assign methods = site.method | sort: "order" %}<ol class="method-list">{% for m in methods %}<li{% if m.url == page.url %} class="active"{% endif %}><a href="{{ m.url }}"><span>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>{{ m.nav }}</a></li>{% endfor %}</ol>

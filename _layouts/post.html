@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section class="page-hero"><div class="wrap narrow">
+  <p class="eyebrow"><a href="/blog/">Blog</a> · {{ page.date | date: "%B %-d, %Y" }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.description }}</p>
+</div></section>
+<div class="wrap with-side">
+  <article class="prose">{% include body-with-cta.html html=content %}
+  {% include buybox.html variant="wide" %}
+  </article>
+  <aside class="side">{% include buybox.html variant="side" %}<div class="side-nav"><p class="eyebrow">The method</p>{% include method-list.html %}</div></aside>
+</div>
+{% assign related = site.posts | where_exp: "p", "p.url != page.url" %}{% if related.size > 0 %}
+<div class="wrap"><section class="related"><h2>Keep reading</h2><div class="cards">{% for p in related limit:3 %}{% include post-card.html post=p %}{% endfor %}</div></section></div>{% endif %}

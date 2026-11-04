@@ -1,0 +1,11 @@
+---
+layout: default
+title: "The Method: 8 Principles to Beat Performance Anxiety"
+description: "A step-by-step guide to the principles behind The Performance Anxiety Cure, from breaking the fear loop to rebuilding real confidence in bed."
+---
+<section class="page-hero"><div class="wrap narrow">
+  <p class="eyebrow">The Method</p>
+  <h1>Eight Principles That Take the Fear Out of Sex</h1>
+  <p class="lede">Performance anxiety runs on a loop. Each principle below breaks one link in it. Read them in order, then get the book for the full step-by-step plan.</p>
+</div></section>
+<div class="wrap"><div class="principles">{% assign methods = site.method | sort: "order" %}{% for m in methods %}<a class="principle" href="{{ m.url }}"><span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h3>{{ m.title }}</h3><p>{{ m.description }}</p></a>{% endfor %}</div>{% include buybox.html variant="wide" %}</div>

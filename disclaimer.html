@@ -1,0 +1,8 @@
+---
+layout: "default"
+title: "Medical Disclaimer"
+description: "The content on performanceanxietycure.com is educational and is not medical advice."
+permalink: "/disclaimer/"
+sitemap: False
+---
+{% assign BUY_URL = site.buy_url %}{% capture METHOD_LIST %}{% include method-list.html %}{% endcapture %}{% capture LATEST_POSTS %}{% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}{% endcapture %}{% capture BUY_BOX %}{% include buybox.html variant="wide" %}{% endcapture %}{% include content/page-disclaimer.html %}

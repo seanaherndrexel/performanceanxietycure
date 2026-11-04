@@ -1,0 +1,27 @@
+title: The Performance Anxiety Cure
+url: https://performanceanxietycure.com
+baseurl: ""
+author: Sean Stephens
+book_title: The Performance Anxiety Cure
+book_subtitle: A Proven Action Plan for Men to Finally Enjoy Sex Without Performance Anxiety
+# Swap for the book's direct Amazon link (https://www.amazon.com/dp/ASIN) once the listing is live.
+buy_url: https://www.amazon.com/s?k=The+Performance+Anxiety+Cure+Sean+Stephens
+
+permalink: /blog/:title/
+timezone: America/New_York
+future: false
+
+collections:
+  method:
+    output: true
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - ARTICLE_GUIDE.md
+  - keywords.md
+  - kdp
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,7 @@
+---
+layout: "default"
+title: "About the Book and Author Sean Stephens"
+description: "About The Performance Anxiety Cure by Sean Stephens: who it's for, how it's different from supplement and quick-fix advice, and what you'll get from it."
+permalink: "/about/"
+---
+{% assign BUY_URL = site.buy_url %}{% capture METHOD_LIST %}{% include method-list.html %}{% endcapture %}{% capture LATEST_POSTS %}{% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}{% endcapture %}{% capture BUY_BOX %}{% include buybox.html variant="wide" %}{% endcapture %}{% include content/page-about.html %}
