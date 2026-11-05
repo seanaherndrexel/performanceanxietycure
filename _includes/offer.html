@@ -10,10 +10,9 @@
           <li><span><strong>Bonus 2:</strong> The monthly members' newsletter</span><span class="free">FREE</span></li>
           <li class="total"><span>Total value</span><span><s>${{ site.value_total }}</s></span></li>
         </ul>
-        <p class="price-line"><span class="was js-label">Your price today</span><span class="now js-price">${{ site.price_ebook }}</span></p>
-        <div class="countdown js-countdown" data-end="{{ site.launch_end }}" aria-live="polite"><span>Launch price ends {{ site.launch_end_label }}. Time left:</span> <b class="js-cd">--</b></div>
+        <p class="price-line"><span class="was">Your price</span><span class="now">${{ site.price_ebook }}</span></p>
         <div class="order-actions">
-          <a class="btn btn-red btn-lg js-buy" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access Now<small>eBook, audiobook and both bonuses</small></a>
+          <a class="btn btn-red btn-lg" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access Now<small>eBook, audiobook and both bonuses</small></a>
         </div>
         <p class="order-alt">Prefer a paperback? <a href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Order it on Amazon</a>.</p>
       </div>
