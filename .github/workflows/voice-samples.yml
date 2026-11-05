@@ -1,0 +1,70 @@
+name: Narrator voice samples
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/voice-samples.yml']
+permissions:
+  contents: write
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: |
+          sudo apt-get install -y -qq ffmpeg
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q pocket-tts chatterbox-tts scipy soundfile || true
+      - name: Generate
+        run: |
+          mkdir -p kdp/samples
+          cat > /tmp/text.txt <<'TXT'
+          Most men who deal with performance anxiety have the same question: why is this so hard to beat? It feels like the more you try to fix it, the worse it gets. You try to control your mind, push away fear, breathe a certain way, or focus on the moment. None of it helps. The problem does not start in your body. Most men who have this issue are physically fine. They can get hard alone. The body works. The real problem starts when there is a real person in front of you, and you begin to worry about what might happen.
+          TXT
+          cat > /tmp/gen.py <<'PY'
+          import os, traceback, subprocess
+          import numpy as np, soundfile as sf
+          text = open('/tmp/text.txt').read().strip()
+          def save(name, wav, sr):
+              wav = np.asarray(wav, dtype=np.float32).squeeze()
+              sf.write(f'/tmp/{name}.wav', wav, sr)
+              subprocess.run(['ffmpeg','-loglevel','error','-y','-i',f'/tmp/{name}.wav','-af','loudnorm=I=-18:TP=-1.5','-ar','44100','-b:a','128k',f'kdp/samples/{name}.mp3'], check=True)
+              print('saved', name, len(wav)/sr)
+          try:
+              from pocket_tts import TTSModel
+              m = TTSModel.load_model()
+              for v in ['jean', 'marius', 'javert']:
+                  try:
+                      st = m.get_state_for_audio_prompt(v)
+                      a = m.generate_audio(st, text)
+                      save(f'pocket_{v}', a.numpy() if hasattr(a, 'numpy') else a, m.sample_rate)
+                  except Exception:
+                      traceback.print_exc()
+          except Exception:
+              traceback.print_exc()
+          try:
+              from chatterbox.tts import ChatterboxTTS
+              cb = ChatterboxTTS.from_pretrained(device='cpu')
+              for i, (ex, cfg) in enumerate([(0.4, 0.5), (0.6, 0.35)]):
+                  w = cb.generate(text, exaggeration=ex, cfg_weight=cfg)
+                  save(f'chatterbox_{i+1}', w.numpy(), cb.sr)
+          except Exception:
+              traceback.print_exc()
+          PY
+          python /tmp/gen.py
+          ls -la kdp/samples
+          pip show pocket-tts chatterbox-tts 2>/dev/null | grep -E 'Name|Version|License' || true
+      - name: Save samples
+        run: |
+          git config user.name "pac-narrator"
+          git config user.email "pac-narrator@users.noreply.github.com"
+          git add kdp/samples
+          git diff --cached --quiet && exit 0
+          git commit -m "Add narrator voice samples"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 5; done
+          exit 1
