@@ -1,0 +1,22 @@
+<div class="order-box" id="order">
+    <h3>Yes, I'm ready to stop feeding the fear</h3>
+    <div class="order-grid">
+      <img src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="170" height="272" loading="lazy">
+      <div>
+        <ul class="stack">
+          <li><span>The Performance Anxiety Cure eBook (EPUB and PDF)</span><span>${{ site.price_ebook_amazon }}</span></li>
+          <li><span>The complete audiobook in MP3 (list price)</span><span>${{ site.price_audio_amazon }}</span></li>
+          <li><span><strong>Bonus 1:</strong> Lifetime access to the private members' board</span><span class="free">FREE</span></li>
+          <li><span><strong>Bonus 2:</strong> The monthly members' newsletter</span><span class="free">FREE</span></li>
+          <li class="total"><span>Total value</span><span><s>${{ site.value_total }}</s></span></li>
+        </ul>
+        <p class="price-line"><span class="was js-label">Your price today</span><span class="now js-price">${{ site.price_ebook }}</span></p>
+        <div class="countdown js-countdown" data-end="{{ site.launch_end }}" aria-live="polite"><span>Launch price ends {{ site.launch_end_label }}. Time left:</span> <b class="js-cd">--</b></div>
+        <div class="order-actions">
+          <a class="btn btn-red btn-lg js-buy" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access Now<small>eBook, audiobook and both bonuses</small></a>
+        </div>
+        <p class="order-alt">Prefer a paperback? <a href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Order it on Amazon</a>.</p>
+      </div>
+    </div>
+    <p class="order-fine">Secure checkout by Stripe. Right after payment you create your member account and download everything.</p>
+  </div>
