@@ -1,6 +1,6 @@
 # Article rules for performanceanxietycure.com
 
-Every article exists to rank on Google for one keyword and send readers to buy The Performance Anxiety Cure by Sean Stephens on Amazon.
+Every article exists to rank on Google for one keyword and send readers to buy The Performance Anxiety Cure by Sean Stephens directly on this site. The main offer is the $14.99 bundle at /buy/ (eBook, audiobook, the private members' board and the monthly members' newsletter). When the article points to the book, link to /buy/. The paperback is on Amazon, but never make Amazon the main call to action, and never write a price other than what /buy/ shows.
 
 ## File format
 Create `_posts/YYYY-MM-DD-<slug>.html` (today's date, America/New_York; the slug is the keyword in lowercase with hyphens, and it becomes the URL /blog/<slug>/). Body is bare HTML: `<p>`, `<h2>`, `<h3>`, `<ul>/<li>`, `<blockquote>`, `<strong>`, `<a>`. No `<h1>`, no html/head/body tags, no inline styles, no images, and never the characters `{{` or `{%`. Start the file with this YAML front matter (keep the double quotes; escape any double quote inside a value as \"):
@@ -36,7 +36,7 @@ GitHub Pages builds the site automatically about a minute after the commit. The 
 - Never mention Spider-Man or other trademarks, Main Street Creative, or any other business.
 
 ## Book facts you may use (from the manuscript)
-- Opens with "There is no cure": performance anxiety fades when you stop feeding it; effort is the fuel.
+- Performance anxiety fades when you stop feeding it; effort is the fuel. Tricks wear off; a specific experience in the final chapter shows the brain nothing is wrong, and that change sticks.
 - Fear system vs pleasure system; anxiety and arousal feel similar, the mind's label decides.
 - Spectatoring / self-monitoring kills arousal; softening during sex is normal.
 - "Oxygen mask first": your own enjoyment comes first and helps her too.
