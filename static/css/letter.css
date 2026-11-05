@@ -71,7 +71,9 @@
   .letter h2{font-size:28px;margin:1.3em 0 .4em}
   .fascinations li{padding:9px 0 9px 28px}
   .fascinations li::before{width:12px;height:12px;top:16px}
-  .fascinations em{display:none}
+  .fascinations em{font-size:13px}
+  .price-line .now{font-size:44px}
+  .qa .q{font-size:17px}
   .pullquote{font-size:26px;padding-left:16px;margin:24px 0}
   .callout{padding:16px 18px}
   .order-box{padding:20px 14px}
@@ -84,4 +86,33 @@
   .final-cta{padding:36px 0}
   .final-cta img{max-width:120px}
   .with-side{padding-top:28px;gap:28px}
+}
+
+/* pain list, Q&A and single-price order box */
+.pains{list-style:none;padding:0;margin:18px 0 22px;background:var(--soft);border-radius:var(--radius);padding:18px 22px}
+.pains li{position:relative;padding:8px 0 8px 30px}
+.pains li::before{content:"\2716";position:absolute;left:0;top:8px;color:var(--red);font-weight:800}
+.page-note{font-size:14px;color:var(--muted);margin-top:-6px}
+.qa{border-top:2px solid var(--line);margin-top:10px}
+.qa .q{font-weight:800;color:var(--navy);margin:22px 0 6px;font-size:19px}
+.qa .q+p{margin-top:0}
+.order-includes{list-style:none;padding:0;margin:0 0 16px}
+.letter .order-includes li{color:#d7defa;position:relative;padding:6px 0 6px 28px;font-size:17px}
+.order-includes li::before{content:"\2714";position:absolute;left:0;top:6px;color:#ff6b72;font-weight:800}
+.price-line{display:flex;align-items:baseline;justify-content:center;gap:16px;margin:6px 0 16px}
+.letter .price-line .was{color:#aab6dc;font-size:17px}
+.price-line .was s{color:#aab6dc}
+.price-line .now{font-family:"Bebas Neue",Impact,sans-serif;font-size:60px;line-height:1;color:#fff}
+.letter .price-line.dark .was,.price-line.dark .was s{color:var(--muted)}
+.price-line.dark .now{color:var(--navy);font-size:48px}
+.letter .order-alt{font-size:15px;color:#aab6dc;text-align:center;margin:14px 0 0}
+.order-alt a{color:#fff;font-weight:600}
+.single-offer{text-align:center;background:var(--soft);border-radius:var(--radius);padding:22px;margin:18px 0}
+.btn small s{opacity:.8}
+@media (max-width:600px){
+  .price-line .now{font-size:46px}
+  .price-line.dark .now{font-size:40px}
+  .qa .q{font-size:17px}
+  .pains{padding:14px 16px}
+  .letter .order-includes li{font-size:15px;text-align:left}
 }

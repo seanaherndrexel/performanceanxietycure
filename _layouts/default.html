@@ -46,8 +46,8 @@
     <div>
       <p class="eyebrow">The complete plan</p>
       <h2>Get the full plan in {{ site.book_title }}</h2>
-      <p>The articles cover the principles. The book walks you through every step, including what to say, what to do in the moment, and how to handle the night it goes wrong.</p>
-      <a class="btn btn-red btn-lg" href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Get the book on Amazon<small>Paperback ${{ site.price_paperback }} · Kindle ${{ site.price_ebook_amazon }}</small></a>
+      <p>The articles cover the principles. The book walks you through every step, including the experience on page 67 that shows your brain nothing is wrong with you, so the change sticks.</p>
+      <a class="btn btn-red btn-lg" href="/buy/">Get Instant Access for ${{ site.price_ebook }}<small>Regular price <s>${{ site.price_ebook_amazon }}</s></small></a>
     </div>
   </div>
 </section>{% endunless %}
@@ -57,6 +57,6 @@
     <p class="small">The information on this site is educational and is not medical advice. Talk to your doctor about any health concern or before taking any medication. © {{ site.time | date: "%Y" }} {{ site.author }}.</p>
   </div>
 </footer>
-<a class="sticky-buy" href="{{ site.buy_url }}" rel="nofollow sponsored noopener" target="_blank">Get the book on Amazon</a>
+<a class="sticky-buy" href="/buy/">Get instant access for ${{ site.price_ebook }}</a>
 </body>
 </html>

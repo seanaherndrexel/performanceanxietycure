@@ -1,60 +1,53 @@
 <!--
-title: Buy The Performance Anxiety Cure on Amazon
-description: Get The Performance Anxiety Cure by Sean Stephens on Amazon in paperback or Kindle. A proven action plan for men to finally enjoy sex without performance anxiety.
+title: Buy The Performance Anxiety Cure
+description: Get instant access to The Performance Anxiety Cure by Sean Stephens, the plan that shows your brain nothing is wrong with you so the change sticks.
 -->
 <section class="hero letter-hero">
   <div class="wrap hero-inner">
     <div>
-      <p class="pre-head">Paperback, Kindle, eBook and audiobook</p>
-      <h1 class="headline">Get Your Copy of The Performance Anxiety <em>Cure</em></h1>
-      <p class="subhead">A Proven Action Plan for Men to Finally Enjoy Sex Without Performance Anxiety, in fifteen chapters written in plain language.</p>
+      <p class="pre-head">Instant download</p>
+      <h1 class="headline">Get The Performance Anxiety <em>Cure</em></h1>
+      <p class="subhead">The fifteen-chapter plan, including the page 67 method that makes the change stick.</p>
       <div class="hero-actions">
-        <a class="btn btn-red btn-lg" href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank">Get the Book on Amazon<small>Paperback ${{ site.price_paperback }} · Kindle ${{ site.price_ebook_amazon }}</small></a>
-        <a class="btn btn-ghost btn-lg" href="#direct">Buy direct and save 20%</a>
+        <a class="btn btn-red btn-lg" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access for ${{ site.price_ebook }}<small>Regular price <s>${{ site.price_ebook_amazon }}</s></small></a>
       </div>
     </div>
-    <a href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank"><img class="hero-cover" src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="340" height="544"></a>
+    <img class="hero-cover" src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="340" height="544">
   </div>
 </section>
 <article class="letter">
-  <div class="order-box">
-    <h3>Order on Amazon</h3>
+  <div class="order-box" id="order">
+    <h3>Yes, I'm ready to stop feeding the fear</h3>
     <div class="order-grid">
-      <a href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank"><img src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="170" height="272"></a>
+      <img src="/static/img/cover.jpg" alt="The Performance Anxiety Cure book cover" width="170" height="272">
       <div>
-        <ul class="order-list">
-          <li><span>Paperback, delivered by Amazon</span><span>${{ site.price_paperback }}</span></li>
-          <li><span>Kindle edition, read on any device</span><span>${{ site.price_ebook_amazon }}</span></li>
+        <ul class="order-includes">
+          <li>All fifteen chapters, start to finish</li>
+          <li>The word-for-word scripts for before, during and after</li>
+          <li>Your emergency toolkit for the night it goes wrong</li>
+          <li>The page 67 method that makes the change stick</li>
+          <li>EPUB and PDF, readable on any phone, tablet or computer</li>
         </ul>
+        <p class="price-line"><span class="was">Regular price <s>${{ site.price_ebook_amazon }}</s></span><span class="now">${{ site.price_ebook }}</span></p>
         <div class="order-actions">
-          <a class="btn btn-red btn-lg" href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank">Get the Book on Amazon<small>Paperback or Kindle</small></a>
+          <a class="btn btn-red btn-lg" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access Now<small>Download in under a minute</small></a>
         </div>
-        <p class="order-fine">The Kindle edition opens in the free Kindle app on any phone, tablet or computer.</p>
       </div>
     </div>
+    <p class="order-fine">Secure checkout by Stripe. Your download link appears the moment payment goes through, and your card statement shows a short name instead of the book title.</p>
   </div>
 
-  <h2 id="direct">Or buy direct from the author and save 20%</h2>
-  <p>Buy here and the files are yours to keep, with no app or account required. Your download link appears as soon as checkout finishes.</p>
-  <div class="store">
-    <div class="offer">
-      <span class="save">Save 20%</span>
-      <h3>The eBook</h3>
-      <p class="price">${{ site.price_ebook }}<s>${{ site.price_ebook_amazon }}</s></p>
-      <ul><li>EPUB for Apple Books, Kobo, Google Play Books and most reading apps</li><li>PDF for any phone, tablet or computer</li><li>All fifteen chapters, instant download</li></ul>
-      <a class="btn btn-red" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Buy the eBook</a>
-    </div>
-    <div class="offer">
-      <span class="save">Save 20%</span>
-      <h3>The Audiobook</h3>
-      <p class="price">${{ site.price_audio }}<s>${{ site.price_audio_amazon }}</s></p>
-      <ul><li>The complete book in MP3 files, one per chapter</li><li>Plays on any phone, car stereo or computer</li><li>Narrated by a natural-sounding digital voice</li></ul>
-      <a class="btn btn-red" href="{{ site.stripe_audio }}" rel="nofollow noopener">Buy the audiobook</a>
-    </div>
+  <h2 id="direct">Rather listen than read?</h2>
+  <p>The audiobook gives you the complete book as MP3 files, one per chapter, so you can play it on your phone, in the car or on any computer.</p>
+  <div class="single-offer">
+    <p class="price-line dark"><span class="was">Regular price <s>${{ site.price_audio_amazon }}</s></span><span class="now">${{ site.price_audio }}</span></p>
+    <a class="btn btn-red" href="{{ site.stripe_audio }}" rel="nofollow noopener">Get the Audiobook</a>
   </div>
-  <p class="store-note">Secure checkout by Stripe. Your card statement will show the purchase as "PA CURE."</p>
 
-  <h2>What's inside, chapter by chapter</h2>
+  <h2>Want a paperback on your shelf?</h2>
+  <p>The paperback and Kindle editions are sold through Amazon. <a href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank">See them on Amazon</a>.</p>
+
+<h2>What's inside, chapter by chapter</h2>
   <ul class="checks">
     <li>Why performance anxiety feels impossible to fix</li>
     <li>How anxiety and arousal work inside your body</li>
@@ -70,7 +63,7 @@ description: Get The Performance Anxiety Cure by Sean Stephens on Amazon in pape
     <li>Foreplay, and why it does half the work for you</li>
     <li>Personality type and the pressure to initiate</li>
     <li>Condoms, anxiety, and how to handle them safely</li>
-    <li>The Spider-Man Confidence Method: medication as training wheels, then taking them off</li>
+    <li>The Spider-Man Confidence Method on page 67: the experience that shows your brain you were never broken</li>
   </ul>
-  <p style="margin-top:30px;text-align:center"><a class="btn btn-red btn-lg" href="{{BUY_URL}}" rel="nofollow sponsored noopener" target="_blank">Get the Book on Amazon<small>Paperback ${{ site.price_paperback }} · Kindle ${{ site.price_ebook_amazon }}</small></a></p>
+  <p style="margin-top:30px;text-align:center"><a class="btn btn-red btn-lg" href="{{ site.stripe_ebook }}" rel="nofollow noopener">Get Instant Access for ${{ site.price_ebook }}<small>Regular price <s>${{ site.price_ebook_amazon }}</s></small></a></p>
 </article>
