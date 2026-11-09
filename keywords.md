@@ -5,7 +5,7 @@ Ordered by search demand and buyer intent. Do not reorder checked items.
 
 - [x] how to overcome performance anxiety in bed | 2026-11-03 | how-to-overcome-performance-anxiety-in-bed
 - [x] performance anxiety erectile dysfunction | 2026-11-07 | performance-anxiety-erectile-dysfunction
-- [ ] how to stop performance anxiety with a new partner
+- [x] how to stop performance anxiety with a new partner | 2026-11-09 | how-to-stop-performance-anxiety-with-a-new-partner
 - [ ] sexual performance anxiety causes
 - [ ] psychological erectile dysfunction
 - [ ] losing erection during sex
