@@ -5,5 +5,14 @@ description: "Most men with performance anxiety are physically fine. The Perform
 permalink: "/"
 book_schema: True
 no_final_cta: True
+faq:
+  - q: "I've tried everything already. Why would this be different?"
+    a: "Everything you've tried was aimed at your body or at forcing your mind to behave. This book goes after the story your brain is telling, and it replaces that story with real experiences that prove it wrong."
+  - q: "Will anyone know I bought it?"
+    a: "No. The eBook and audiobook download straight to your phone or computer, and your card statement shows a short name instead of the book title. Nothing arrives at your door unless you order the paperback."
+  - q: "What if my problem is physical?"
+    a: "If you can't get hard even when you're alone, that points to a physical cause, and the right first step is your doctor. The book draws that line in its first chapter, and it never asks you to take any medication without a doctor's approval."
+  - q: "Is it long and clinical?"
+    a: "It's fifteen short chapters in plain language, written the way a friend who has been through it would explain it to you. You can read the whole thing in an evening."
 ---
 {% assign BUY_URL = site.buy_url %}{% capture METHOD_LIST %}{% include method-list.html %}{% endcapture %}{% capture LATEST_POSTS %}{% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}{% endcapture %}{% capture BUY_BOX %}{% include buybox.html variant="wide" %}{% endcapture %}{% include content/page-home.html %}

@@ -13,3 +13,5 @@ layout: default
   </article>
   <aside class="side">{% include buybox.html variant="side" %}<div class="side-nav"><p class="eyebrow">The method</p>{% include method-list.html %}</div></aside>
 </div>
+{% if site.posts.size > 0 %}
+<div class="wrap"><section class="related"><h2>Latest articles</h2><div class="cards">{% for p in site.posts limit:3 %}{% include post-card.html post=p %}{% endfor %}</div></section></div>{% endif %}

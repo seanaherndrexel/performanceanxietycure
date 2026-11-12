@@ -3,16 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if page.title contains site.title %}{{ page.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+{% assign seo_t = page.seo_title | default: page.title %}<title>{% if seo_t contains site.title or seo_t.size > 45 %}{{ seo_t }}{% else %}{{ seo_t }} | {{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.description | escape }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'method' %}article{% else %}website{% endif %}">
-<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ seo_t | escape }}">
 <meta property="og:description" content="{{ page.description | escape }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}/static/img/cover.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="1280">
+<meta property="og:image:alt" content="{{ site.book_title }} by {{ site.author }}">
+<meta property="og:locale" content="en_US">
+{% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_t | escape }}">
+<meta name="twitter:description" content="{{ page.description | escape }}">
+{% feed_meta %}
+{% if page.book_schema %}<link rel="preload" as="image" href="/static/img/cover.jpg" fetchpriority="high">{% endif %}
 <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +31,12 @@
 <link rel="stylesheet" href="/static/css/site.css">
 <link rel="stylesheet" href="/static/css/extra.css">
 <link rel="stylesheet" href="/static/css/letter.css">
-{% if page.book_schema %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":{{ site.book_title | jsonify }},"alternativeHeadline":{{ site.book_subtitle | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"image":"{{ site.url }}/static/img/cover.jpg","url":"{{ site.url }}/buy/","inLanguage":"en","workExample":[{"@type":"Book","bookFormat":"https://schema.org/Paperback"},{"@type":"Book","bookFormat":"https://schema.org/EBook"}],"offers":{"@type":"Offer","url":{{ site.buy_url | jsonify }},"availability":"https://schema.org/InStock"}}</script>{% endif %}
-{% if page.layout == 'post' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.date | date_to_xmlschema }}","keywords":{{ page.keywords | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg","publisher":{"@type":"Organization","name":{{ site.title | jsonify }}}}</script>{% endif %}
-{% if page.layout == 'method' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }}},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg"}</script>{% endif %}
+{% if page.book_schema %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","@id":"{{ site.url }}/#book","name":{{ site.book_title | jsonify }},"alternativeHeadline":{{ site.book_subtitle | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }},"url":"{{ site.url }}/about/"},"image":"{{ site.url }}/static/img/cover.jpg","url":"{{ site.url }}/buy/","inLanguage":"en","genre":"Self-help","about":"Sexual performance anxiety in men","workExample":[{"@type":"Book","bookFormat":"https://schema.org/EBook","inLanguage":"en"},{"@type":"Book","bookFormat":"https://schema.org/Paperback","inLanguage":"en"},{"@type":"Audiobook","bookFormat":"https://schema.org/AudiobookFormat","inLanguage":"en"}],"offers":{"@type":"Offer","name":"eBook and audiobook bundle","url":"{{ site.url }}/buy/","price":"{{ site.price_ebook }}","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>{% endif %}
+{% if page.url == "/" %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"{{ site.url }}/#website","name":{{ site.title | jsonify }},"url":"{{ site.url }}/","inLanguage":"en"}</script>{% endif %}
+{% if page.faq %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in page.faq %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}</script>{% endif %}
+{% if page.layout == 'post' or page.layout == 'method' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ site.url }}/"},{"@type":"ListItem","position":2,"name":"{% if page.layout == 'post' %}Blog{% else %}The Method{% endif %}","item":"{{ site.url }}/{% if page.layout == 'post' %}blog{% else %}method{% endif %}/"},{"@type":"ListItem","position":3,"name":{{ page.title | jsonify }},"item":"{{ site.url }}{{ page.url }}"}]}</script>{% endif %}
+{% if page.layout == 'post' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.last_modified_at | default: page.date | date_to_xmlschema }}","keywords":{{ page.keywords | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }},"url":"{{ site.url }}/about/"},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg","publisher":{"@type":"Organization","name":{{ site.title | jsonify }},"url":"{{ site.url }}/"}}</script>{% endif %}
+{% if page.layout == 'method' %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Person","name":{{ site.author | jsonify }},"url":"{{ site.url }}/about/"},"mainEntityOfPage":"{{ site.url }}{{ page.url }}","image":"{{ site.url }}/static/img/cover.jpg"}</script>{% endif %}
 </head>
 <body>
 <header class="site-header">
@@ -42,7 +56,7 @@
 {% unless page.no_signup %}{% include signup.html id="foot" %}{% endunless %}
 {% unless page.no_final_cta %}<section class="final-cta">
   <div class="wrap final-cta-inner">
-    <img src="/static/img/cover.jpg" alt="{{ site.book_title }} by {{ site.author }}" width="200" height="320" loading="lazy">
+    <img src="/static/img/cover-400.jpg" alt="{{ site.book_title }} by {{ site.author }}" width="200" height="320" loading="lazy">
     <div>
       <p class="eyebrow">The complete plan</p>
       <h2>Get the full plan in {{ site.book_title }}</h2>
@@ -57,7 +71,7 @@
     <p class="small">The information on this site is educational and is not medical advice. Talk to your doctor about any health concern or before taking any medication. © {{ site.time | date: "%Y" }} {{ site.author }}.</p>
   </div>
 </footer>
-<a class="sticky-buy" href="/buy/">Get instant access for ${{ site.price_ebook }}</a>
+<a class="sticky-buy" href="{% if page.url == "/" %}#order{% else %}/buy/{% endif %}">Get instant access for ${{ site.price_ebook }}</a>
 {% include popup.html %}
 </body>
 </html>
