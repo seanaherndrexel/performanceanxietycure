@@ -8,7 +8,7 @@ Ordered by search demand and buyer intent. Do not reorder checked items.
 - [x] how to stop performance anxiety with a new partner | 2026-11-09 | how-to-stop-performance-anxiety-with-a-new-partner
 - [x] sexual performance anxiety causes | 2026-11-11 | sexual-performance-anxiety-causes
 - [x] psychological erectile dysfunction | 2026-11-13 | psychological-erectile-dysfunction
-- [ ] losing erection during sex
+- [x] losing erection during sex | 2026-11-15 | losing-erection-during-sex
 - [ ] performance anxiety first time with someone new
 - [ ] how to stay hard during sex
 - [ ] spectatoring during sex
