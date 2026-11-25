@@ -13,7 +13,7 @@ Ordered by search demand and buyer intent. Do not reorder checked items.
 - [x] how to stay hard during sex | 2026-11-19 | how-to-stay-hard-during-sex
 - [x] spectatoring during sex | 2026-11-21 | spectatoring-during-sex
 - [x] losing erection when putting on a condom | 2026-11-23 | losing-erection-when-putting-on-a-condom
-- [ ] can anxiety cause erectile dysfunction
+- [x] can anxiety cause erectile dysfunction | 2026-11-25 | can-anxiety-cause-erectile-dysfunction
 - [ ] what to say to your partner about performance anxiety
 - [ ] does nofap cure erectile dysfunction
 - [ ] performance anxiety in young men
