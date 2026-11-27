@@ -14,7 +14,7 @@ Ordered by search demand and buyer intent. Do not reorder checked items.
 - [x] spectatoring during sex | 2026-11-21 | spectatoring-during-sex
 - [x] losing erection when putting on a condom | 2026-11-23 | losing-erection-when-putting-on-a-condom
 - [x] can anxiety cause erectile dysfunction | 2026-11-25 | can-anxiety-cause-erectile-dysfunction
-- [ ] what to say to your partner about performance anxiety
+- [x] what to say to your partner about performance anxiety | 2026-11-27 | what-to-say-to-your-partner-about-performance-anxiety
 - [ ] does nofap cure erectile dysfunction
 - [ ] performance anxiety in young men
 - [ ] how long does performance anxiety last
